@@ -4,15 +4,17 @@ import './stileButton.css'
 
 const ResultAll = () => {
   const store = useContext(CountVotos)
+  console.log(store.num);
   return(
     <div  className="side-catdidatos">
 
         {store?.candidatos.map((c) => (
             <div key={c.candidato}>
-                 <p className="enabled"><span>C1: {
-                    c.votos}
+                 <p className="enabled"><span>{c.candidato}: 
+                 {store.num ? c.num(store.total) :c.votos }
                 </span></p>
             </div>
+            
         ))}
     </div>
   )

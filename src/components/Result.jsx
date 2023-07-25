@@ -6,22 +6,27 @@ const Result = () => {
   const store = useContext(CountVotos)
   return(
     <div  className="side-catdidatos">
-        <p className="enabled"><span>C1: {
+        <p className="enabled"><span>{
         store.candidatos[0].show ? 
-        store.candidatos[0].votos
-        : '0'}</span></p>
-        <p className="enabled"><span>C2: {
+        `C1: ${
+          store.num ? store.candidatos[0].num(store.total) 
+          : store.candidatos[0].votos}` 
+        : ''}</span></p>
+        <p className="enabled"><span> {
         store.candidatos[1].show ? 
-        store.candidatos[1].votos
-        : '0'}</span></p>
-        <p className="enabled"><span>C3:  {
+        `C2: ${
+          store.num ? store.candidatos[1].num(store.total) : store.candidatos[1].votos}` 
+        : ''}</span></p>
+        <p className="enabled"><span> {
         store.candidatos[2].show ? 
-        store.candidatos[2].votos
-        : '0'}</span></p>
-        <p className="enabled"><span>C4:  {
+        `C3: ${
+          store.num ? store.candidatos[2].num(store.total) : store.candidatos[2].votos}` 
+        : ''}</span></p>
+        <p className="enabled"><span> {
         store.candidatos[3].show ? 
-        store.candidatos[3].votos
-        : '0'}</span></p>
+        `C4: ${
+          store.num ? store.candidatos[3].num(store.total) : store.candidatos[3].votos}` 
+        : ''}</span></p>
 </div>
   )
 }

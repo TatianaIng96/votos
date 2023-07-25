@@ -11,10 +11,12 @@ const Filtro = () => {
     <div className="main">
         <div className="filtro">
             <h2>Filtrar informacion</h2>
-            <form >
-                <select name="tipoTotal">
-                    <option value="porcentaje">Porcentaje</option>
+            <form onSubmit={store.handleSubmit}>
+                <select name="tipoTotal" onChange={store.handleChangeNum}>
+                    <option value="DEFAULT" disabled> option</option>
+                    <option value="DEFAULT" disabled> option</option>
                     <option value="numerico">Numerico</option>
+                    <option value="porcentaje" >Porcentaje</option>
                 </select>
                 <select name="catdidatoOpcion"  onChange={store.handleChange} >
                     <option value="todos">Todos</option>
@@ -30,7 +32,7 @@ const Filtro = () => {
             <div className="totalvotos">
                <h2>Suma Total de votos {<VotosTotalC/>} </h2> 
             </div>
-            {store.show ? <ResultAll/>: <Result/>}
+            {store.show  ? <ResultAll/>: <Result/>}
         </div>
     </div>
   )
