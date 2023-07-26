@@ -1,0 +1,43 @@
+.main{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-left: 10em;
+    padding-top: 5em;
+}
+
+.filtro{
+    display: flex;
+    flex-direction: column;
+    width: 1000px;
+}
+.filter{
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    padding-top: 2em;
+    padding-left: 20em;
+}
+
+select{
+    height: 3em;
+}
+button{
+    margin-top: 2em;
+}
+.second-main{
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+}
+.totalvotos{
+    display: flex;
+    justify-content: flex-end;
+    
+}
+.votos{
+    display: flex;
+    justify-content: center;
+    max-width: 1000px;
+    background: rgb(84, 84, 100);
+}

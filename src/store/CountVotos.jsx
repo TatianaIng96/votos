@@ -1,5 +1,4 @@
 import { useState, createContext } from "react";
-import VotosTotalC from "../components/VotosTotalC";
 
 
 export const CountVotos = createContext();
@@ -86,10 +85,31 @@ export const CountProvider = ({ children }) => {
       c.candidato !== value ? {...c, show: false} : {...c, show: true} 
      ))// Actualizar el estado con el valor seleccionado
     }
-    console.log(valor);
+
+
     if(valor==='porcentaje'){
       setNum(true)
+      if(value === "todos"){
+        setCandidatos(candidatos.map((c,index)=>
+        c.candidato === c.candidato[index] ? {...c, show: true} : c
+        ))
+        setShow(true)
+      } else {
+        setCandidatos(candidatos.map((c)=>
+        c.candidato !== value ? {...c, show: false} : {...c, show: true} 
+       ))// Actualizar el estado con el valor seleccionado
+      }
     }else{
+      if(value === "todos"){
+        setCandidatos(candidatos.map((c,index)=>
+        c.candidato === c.candidato[index] ? {...c, show: true} : c
+        ))
+        setShow(true)
+      } else {
+        setCandidatos(candidatos.map((c)=>
+        c.candidato !== value ? {...c, show: false} : {...c, show: true} 
+       ))// Actualizar el estado con el valor seleccionado
+      }
       setNum(false)
     }
      
